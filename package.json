@@ -1,0 +1,57 @@
+{
+  "name": "webpack1-long-term-cache",
+  "version": "1.0.0",
+  "description": "webpack1 long term cache example",
+  "main": "index.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --no-info --config ./webpack.dev.config.js --colors --compress --host 0.0.0.0 --port 8080 --inline --hot --open",
+    "prebuild:1": "rimraf ./example1/build/*",
+    "build:1": "cross-env NODE_ENV=production webpack --progress --display-reasons --display-chunks --config ./example1/webpack.config.js",
+    "prebuild:2": "rimraf ./example2/build/*",
+    "build:2": "cross-env NODE_ENV=production webpack --progress --display-reasons --display-chunks --config ./example2/webpack.config.js",
+    "prebuild:3": "rimraf ./example3/build/*",
+    "build:3": "cross-env NODE_ENV=production webpack --progress --display-reasons --display-chunks --config ./example3/webpack.config.js",
+    "prebuild:4": "rimraf ./example4/build/*",
+    "build:4": "cross-env NODE_ENV=production webpack --progress --display-reasons --display-chunks --config ./example4/webpack.config.js",
+    "prebuild:5": "rimraf ./example5/build/*",
+    "build:5": "cross-env NODE_ENV=production webpack --progress --display-reasons --display-chunks --config ./example5/webpack.config.js",
+    "prebuild:6": "rimraf ./example6/build/*",
+    "build:6": "cross-env NODE_ENV=production webpack --progress --display-reasons --display-chunks --config ./example6/webpack.config.js",
+    "build": "npm run build:6 && npm run build:5 && npm run build:4 && npm run build:3 && npm run build:2 && npm run build:1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blade254353074/webpack1-long-term-cache.git"
+  },
+  "keywords": [
+    "webpack",
+    "long",
+    "term",
+    "cache"
+  ],
+  "author": "blade254353074 <blade254353074@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blade254353074/webpack1-long-term-cache/issues"
+  },
+  "homepage": "https://github.com/blade254353074/webpack1-long-term-cache#readme",
+  "dependencies": {
+    "es6-promise": "^4.0.5",
+    "whatwg-fetch": "^2.0.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-latest": "^6.16.0",
+    "cross-env": "^3.1.3",
+    "html-webpack-plugin": "^2.25.0",
+    "rimraf": "^2.5.4",
+    "webpack": "^2.2.0-rc.3",
+    "webpack-bundle-analyzer": "^2.2.1",
+    "webpack-dev-server": "^2.2.0-rc.0",
+    "webpack-merge": "^2.0.0"
+  }
+}
