@@ -53,6 +53,8 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       names: ['vendor', 'libs', 'manifest'],
     }),
+    new webpack.optimize.AggressiveMergingPlugin(),
+    new webpack.optimize.MinChunkSizePlugin({ minChunkSize: 10000 }),
     // new BundleAnalyzerPlugin()
   ]
 }
